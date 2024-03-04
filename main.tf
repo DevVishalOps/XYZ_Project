@@ -3,7 +3,7 @@ terraform {
         bucket = "my-terraform-motogp-backend-bucket"
         region = "ap-south-1" 
         key = "terraform.tfstate"
-        dynamodb_table = "my-state-lock-table"
+        #dynamodb_table = "my-state-lock-table"
   }
 }
 resource "aws_instance" "ubuntu1" {
