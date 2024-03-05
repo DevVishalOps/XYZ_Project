@@ -54,7 +54,6 @@ resource "aws_instance" "ubuntu4" {
     key_name = var.key_name
     vpc_security_group_ids = [aws_security_group.xyz-sg.id]
     # vpc_security_group_ids = var.vpc_security_group_id
-    user_data = file("${path.module}/node_exporter-for-main.sh")
     tags = {
       Name = "feuture-used"
       Environment = "Hello world"
