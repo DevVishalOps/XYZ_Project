@@ -23,8 +23,8 @@ ansible --version
 ## PORT NO OF Prometheus :- 9090
 
 sudo apt update -y
-# sudo su -
-# export RELEASE="2.2.1"
+sudo su -
+export RELEASE="2.2.1"
 sudo useradd --no-create-home --shell /bin/false prometheus  
 sudo useradd --no-create-home --shell /bin/false node_exporter
 sudo mkdir /etc/prometheus
@@ -51,3 +51,9 @@ prometheus --version
 promtool --version
 sudo ufw allow 9090/tcp
 cd /etc/prometheus
+
+
+sudo systemctl daemon-reload
+sudo systemctl start prometheus
+sudo systemctl enable prometheus
+sudo systemctl status prometheus
