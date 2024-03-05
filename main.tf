@@ -10,7 +10,8 @@ resource "aws_instance" "ubuntu1" {
     ami = var.ami
     instance_type = var.instance_type
     key_name = var.key_name
-    vpc_security_group_ids = var.vpc_security_group_id
+    vpc_security_group_ids = [aws_security_group.xyz-sg.id]
+    # vpc_security_group_ids = var.vpc_security_group_id
     user_data = file("${path.module}/ansible.sh")
     tags = {
       Name = "Ansible-Master"
@@ -24,7 +25,8 @@ resource "aws_instance" "ubuntu2" {
     ami = var.ami
     instance_type = var.instance_type
     key_name = var.key_name
-    vpc_security_group_ids = var.vpc_security_group_id
+    vpc_security_group_ids = [aws_security_group.xyz-sg.id]
+    # vpc_security_group_ids = var.vpc_security_group_id
     tags = {
       Name = "Ansible-Node"
       Environment = "Hello world"
@@ -36,7 +38,8 @@ resource "aws_instance" "ubuntu3" {
     ami = var.ami
     instance_type = var.instance_type
     key_name = var.key_name
-    vpc_security_group_ids = var.vpc_security_group_id
+    vpc_security_group_ids = [aws_security_group.xyz-sg.id]
+    # vpc_security_group_ids = var.vpc_security_group_id
     tags = {
       Name = "Ansible-Node"
       Environment = "Hello world"
@@ -49,7 +52,8 @@ resource "aws_instance" "ubuntu4" {
     ami = var.ami
     instance_type = var.instance_type
     key_name = var.key_name
-    vpc_security_group_ids = var.vpc_security_group_id
+    vpc_security_group_ids = [aws_security_group.xyz-sg.id]
+    # vpc_security_group_ids = var.vpc_security_group_id
     tags = {
       Name = "feuture-used"
       Environment = "Hello world"
@@ -61,7 +65,8 @@ resource "aws_instance" "ubuntu5" {
     ami = var.ami
     instance_type = var.instance_type
     key_name = var.key_name
-    vpc_security_group_ids = var.vpc_security_group_id
+    vpc_security_group_ids = [aws_security_group.xyz-sg.id]
+    # vpc_security_group_ids = var.vpc_security_group_id
     tags = {
       Name = "feuture-use"
       Environment = "Hello world"
