@@ -27,6 +27,7 @@ resource "aws_instance" "ubuntu2" {
     key_name = var.key_name
     vpc_security_group_ids = [aws_security_group.xyz-sg.id]
     # vpc_security_group_ids = var.vpc_security_group_id
+    user_data = file("${path.module}/.sh")
     tags = {
       Name = "Ansible-Node"
       Environment = "Hello world"
@@ -54,8 +55,9 @@ resource "aws_instance" "ubuntu4" {
     key_name = var.key_name
     vpc_security_group_ids = [aws_security_group.xyz-sg.id]
     # vpc_security_group_ids = var.vpc_security_group_id
+    user_data = file("${path.module}/node_exporter-for-main.sh")
     tags = {
-      Name = "feuture-used"
+      Name = "grafana"
       Environment = "Hello world"
       Project = "motogp Project"
       Owner = "vishal"
@@ -73,11 +75,4 @@ resource "aws_instance" "ubuntu5" {
       Project = "motogp Project"
       Owner = "vishal"
     }
-
-    provisioner "remote-exec" {
-      inline = [
-        "ifconfig > /tmp/inventory"
-      ]
-    }
-
 }
