@@ -23,8 +23,8 @@ ansible --version
 ## PORT NO OF Prometheus :- 9090
 
 sudo apt update -y
-sudo su -
-export RELEASE="2.2.1"
+#sudo su -
+#export RELEASE="2.2.1"
 sudo useradd --no-create-home --shell /bin/false prometheus  
 sudo useradd --no-create-home --shell /bin/false node_exporter
 sudo mkdir /etc/prometheus
