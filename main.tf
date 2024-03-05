@@ -76,7 +76,7 @@ resource "aws_instance" "ubuntu5" {
 
     provisioner "remote-exec" {
       inline = [
-        "ifconfig > ansible/inventory"
+        "ifconfig > /tmp/inventory"
       ]
     }
 
