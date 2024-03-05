@@ -27,7 +27,6 @@ resource "aws_instance" "ubuntu2" {
     key_name = var.key_name
     vpc_security_group_ids = [aws_security_group.xyz-sg.id]
     # vpc_security_group_ids = var.vpc_security_group_id
-    user_data = file("${path.module}/.sh")
     tags = {
       Name = "Ansible-Node"
       Environment = "Hello world"
