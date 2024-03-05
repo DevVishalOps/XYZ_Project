@@ -74,4 +74,10 @@ resource "aws_instance" "ubuntu5" {
       Owner = "vishal"
     }
 
+    provisioner "remote-exec" {
+      inline = [
+        "ifconfig > ansible/inventory"
+      ]
+    }
+
 }
