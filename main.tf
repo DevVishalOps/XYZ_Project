@@ -28,7 +28,7 @@ resource "aws_instance" "ubuntu2" {
     vpc_security_group_ids = [aws_security_group.xyz-sg.id]
     # vpc_security_group_ids = var.vpc_security_group_id
     tags = {
-      Name = "Ansible-Node"
+      Name = "Ansible-Node-1"
       Environment = "Hello world"
       Project = "Motogp Project"
       Owner = "vishal"
@@ -41,7 +41,7 @@ resource "aws_instance" "ubuntu3" {
     vpc_security_group_ids = [aws_security_group.xyz-sg.id]
     # vpc_security_group_ids = var.vpc_security_group_id
     tags = {
-      Name = "Ansible-Node"
+      Name = "Ansible-Node-2"
       Environment = "Hello world"
       Project = "Motogp Project"
       Owner = "vishal"
@@ -56,7 +56,7 @@ resource "aws_instance" "ubuntu4" {
     # vpc_security_group_ids = var.vpc_security_group_id
     user_data = file("${path.module}/node_exporter-for-main.sh")
     tags = {
-      Name = "grafana"
+      Name = "feuture-used"
       Environment = "Hello world"
       Project = "motogp Project"
       Owner = "vishal"
@@ -69,7 +69,7 @@ resource "aws_instance" "ubuntu5" {
     vpc_security_group_ids = [aws_security_group.xyz-sg.id]
     # vpc_security_group_ids = var.vpc_security_group_id
     tags = {
-      Name = "feuture-use"
+      Name = "Monitoring"
       Environment = "Hello world"
       Project = "motogp Project"
       Owner = "vishal"
