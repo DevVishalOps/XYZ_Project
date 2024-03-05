@@ -1,9 +1,9 @@
 ## PORT NO OF node_exporter :- 9100
-
+su -i
 wget https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
 tar xvfz node_exporter-*.*-amd64.tar.gz
-sudo mv node_exporter-*.*-amd64/node_exporter /usr/local/bin/
-sudo useradd -rs /bin/false node_exporter
+mv node_exporter-*.*-amd64/node_exporter /usr/local/bin/
+useradd -rs /bin/false node_exporter
 
 ## MANUALLY KARYCHE PUDCHE CONFIGURATIONS...
 # sudo vim /etc/systemd/system/node_exporter.service
